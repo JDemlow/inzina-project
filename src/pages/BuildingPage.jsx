@@ -1,10 +1,24 @@
 import { useParams, useLoaderData } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 
-const BuildingPage = () => {
+const BuildingPage = ({ deleteBuilding }) => {
   const { id } = useParams();
   const building = useLoaderData();
+
+  const navigate = useNavigate();
+
+  const onDeleteClick = (buildingId) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this building?"
+    );
+
+    if (!confirm) return;
+
+    deleteBuilding(buildingId);
+
+    navigate("/buildings");
+  };
 
   return (
     <>
@@ -83,7 +97,10 @@ const BuildingPage = () => {
                 >
                   Edit Building
                 </Link>
-                <button className="block w-full px-4 py-2 mt-4 font-bold text-white bg-red-500 rounded-full hover:bg-red-600 focus:outline-none focus:shadow-outline">
+                <button
+                  onClick={() => onDeleteClick(building.id)}
+                  className="block w-full px-4 py-2 mt-4 font-bold text-white bg-red-500 rounded-full hover:bg-red-600 focus:outline-none focus:shadow-outline"
+                >
                   Delete Building
                 </button>
               </div>

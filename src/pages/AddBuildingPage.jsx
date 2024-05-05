@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
-const AddBuildingPage = () => {
+const AddBuildingPage = ({ addBuildingSubmit }) => {
   const [buildingName, setBuildingName] = useState("");
   const [type, setType] = useState("Residential");
   const [description, setDescription] = useState("");
@@ -10,6 +11,8 @@ const AddBuildingPage = () => {
   const [companyDescription, setCompanyDescription] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
+
+  const navigate = useNavigate();
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -27,7 +30,9 @@ const AddBuildingPage = () => {
         contactPhone,
       },
     };
-    console.log(newBuilding);
+    addBuildingSubmit(newBuilding);
+
+    return navigate("/buildings");
   };
 
   return (
