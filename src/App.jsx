@@ -8,12 +8,18 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import BuildingsPage from "./pages/BuildingsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import BuildingPage, { buildingLoader } from "./pages/BuildingPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/buildings" element={<BuildingsPage />} />
+      <Route
+        path="/buildings/:id"
+        element={<BuildingPage />}
+        loader={buildingLoader}
+      />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )

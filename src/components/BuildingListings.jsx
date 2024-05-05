@@ -7,9 +7,7 @@ const BuildingListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchBuildings = async () => {
-      const apiUrl = isHome
-        ? "http://localhost:8000/buildings?_limit=3"
-        : "http://localhost:8000/buildings";
+      const apiUrl = isHome ? "api/buildings?_limit=3" : "api/buildings";
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();

@@ -38,7 +38,7 @@ const BuildingListing = ({ building }) => {
             {building.location}
           </div>
           <Link
-            to={`/building/${building.id}`}
+            to={`/buildings/${building.id}`}
             className="h-[36px] bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             See More
