@@ -9,12 +9,14 @@ import HomePage from "./pages/HomePage";
 import BuildingsPage from "./pages/BuildingsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import BuildingPage, { buildingLoader } from "./pages/BuildingPage";
+import AddBuildingPage from "./pages/AddBuildingPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/buildings" element={<BuildingsPage />} />
+      <Route path="/add-building" element={<AddBuildingPage />} />
       <Route
         path="/buildings/:id"
         element={<BuildingPage />}
