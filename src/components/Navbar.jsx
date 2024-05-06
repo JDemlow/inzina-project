@@ -16,7 +16,7 @@ const Navbar = () => {
             <NavLink className="flex items-center flex-shrink-0 mr-4" to="/">
               <img className="w-auto h-10" src={logo} alt="React Jobs" />
               <span className="hidden ml-2 text-2xl font-bold text-white md:block">
-                CASR RFP for SAAS
+                Denver MHA
               </span>
             </NavLink>
             <div className="md:ml-auto">

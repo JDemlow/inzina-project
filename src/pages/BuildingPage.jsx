@@ -1,6 +1,6 @@
-import { useParams, useLoaderData } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
+import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const BuildingPage = ({ deleteBuilding }) => {
   const { id } = useParams();
@@ -16,6 +16,8 @@ const BuildingPage = ({ deleteBuilding }) => {
     if (!confirm) return;
 
     deleteBuilding(buildingId);
+
+    toast.success("Building deleted successfully");
 
     navigate("/buildings");
   };
@@ -59,7 +61,7 @@ const BuildingPage = ({ deleteBuilding }) => {
                   Rent
                 </h3>
 
-                <p className="mb-4">${building.rent}</p>
+                <p className="mb-4">{building.rent}</p>
               </div>
             </main>
 
@@ -90,9 +92,9 @@ const BuildingPage = ({ deleteBuilding }) => {
 
               {/* <!-- Manage --> */}
               <div className="p-6 mt-6 bg-white rounded-lg shadow-md">
-                <h3 className="mb-6 text-xl font-bold">Manage Job</h3>
+                <h3 className="mb-6 text-xl font-bold">Manage Building</h3>
                 <Link
-                  to={`/buildings/edit/${id}`}
+                  to={`/edit-building/${id}`}
                   className="block w-full px-4 py-2 mt-4 font-bold text-center text-white rounded-full bg-emerald-500 hover:bg-emerald-600 focus:outline-none focus:shadow-outline"
                 >
                   Edit Building

@@ -28,7 +28,7 @@ const BuildingListing = ({ building }) => {
           {showFullDescription ? "Show less" : "Show more"}
         </button>
 
-        <h3 className="mb-2 text-emerald-500">${building.rent}</h3>
+        <h3 className="mb-2 text-emerald-500">{building.rent}</h3>
 
         <div className="mb-5 border border-gray-100"></div>
 

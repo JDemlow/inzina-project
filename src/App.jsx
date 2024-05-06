@@ -10,6 +10,7 @@ import BuildingsPage from "./pages/BuildingsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import BuildingPage, { buildingLoader } from "./pages/BuildingPage";
 import AddBuildingPage from "./pages/AddBuildingPage";
+import EditBuildingPage from "./pages/EditBuildingPage";
 
 const App = () => {
   // Add new building
@@ -32,6 +33,19 @@ const App = () => {
     return;
   };
 
+  // Update building
+
+  const updateBuilding = async (building) => {
+    const res = await fetch(`/api/buildings/${building.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(building),
+    });
+    return;
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -40,6 +54,11 @@ const App = () => {
         <Route
           path="/add-building"
           element={<AddBuildingPage addBuildingSubmit={addBuilding} />}
+        />
+        <Route
+          path="/edit-building/:id"
+          element={<EditBuildingPage updateBuildingSubmit={updateBuilding} />}
+          loader={buildingLoader}
         />
         <Route
           path="/buildings/:id"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const AddBuildingPage = ({ addBuildingSubmit }) => {
   const [buildingName, setBuildingName] = useState("");
@@ -31,6 +32,8 @@ const AddBuildingPage = ({ addBuildingSubmit }) => {
       },
     };
     addBuildingSubmit(newBuilding);
+
+    toast.success("Building Added Successfully");
 
     return navigate("/buildings");
   };
