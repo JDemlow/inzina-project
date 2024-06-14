@@ -1,88 +1,86 @@
-{
-  "buildings": [
-    {
-      "id": "1",
-      "buildingName": "La Fonda",
-      "type": "Apartment",
-      "description": "Convenient Cap Hill Apartments. Enjoy apartment living with a historic twist at 611 E 11th. Choose from a variety of one and two-bedroom floor plans in our Cap Hill community.",
-      "location": "Capitol Hill",
-      "rent": "2,100 / month",
-      "company": {
-        "name": "Red Peak",
-        "description": "Our intimate knowledge of Denver and its history comes easy, because we’re from here. We know where old charm lives in the midst of breathtaking expansion, and our communities offer a rare opportunity to balance the best of both worlds.",
-        "contactEmail": "contact@redpeak.com",
-        "contactPhone": "555-555-5555"
-      }
-    },
-    {
-      "id": "2",
-      "buildingName": "The Douglas Building",
-      "type": "Loft",
-      "description": "Stylish Lofts in the Heart of LoDo. Experience the perfect blend of historic charm and modern convenience at The Douglas Building. Our loft apartments offer spacious layouts and stunning views of downtown Denver.",
-      "location": "Lower Downtown (LoDo)",
-      "rent": "2,500 / month",
-      "company": {
-        "name": "East West Partners",
-        "description": "East West Partners is devoted to building, selling, managing, and supporting high-quality real estate assets. We aim to create value through dedication to the highest standards of architecture, design, construction, and property management.",
-        "contactEmail": "info@eastwestpartners.com",
-        "contactPhone": "555-123-4567"
-      }
-    },
-    {
-      "id": "3",
-      "buildingName": "Highland Bridge Lofts",
-      "type": "Condo",
-      "description": "Luxury Living in Highland. Discover contemporary living at Highland Bridge Lofts. Our condos feature upscale amenities, including a rooftop pool and fitness center, all within walking distance of Denver's best restaurants and shops.",
-      "location": "Highland",
-      "rent": "3,000 / month",
-      "company": {
-        "name": "Zeppelin Development",
-        "description": "Zeppelin Development is a creative developer that produces inventive spaces and experiences that uniquely contribute to the urban fabric. We focus on innovative design, sustainability, and community engagement.",
-        "contactEmail": "hello@zeppelindenver.com",
-        "contactPhone": "555-987-6543"
-      }
-    },
-    {
-      "id": "4",
-      "buildingName": "The Belvedere Tower",
-      "type": "Highrise",
-      "description": "Elegant Highrise Living in Cherry Creek. Experience luxury living at The Belvedere Tower. Our highrise apartments boast breathtaking views, upscale amenities, and easy access to Cherry Creek's shopping and dining scene.",
-      "location": "Cherry Creek",
-      "rent": "4,500 / month",
-      "company": {
-        "name": "Greystar",
-        "description": "Greystar is a global leader in rental housing, offering expertise in property management, investment management, and development and construction services. We are committed to enriching the lives of those we serve.",
-        "contactEmail": "info@greystar.com",
-        "contactPhone": "555-789-0123"
-      }
-    },
-    {
-      "id": "5",
-      "buildingName": "The Artisan Apartments",
-      "type": "Studio",
-      "description": "Creative Studio Living in RiNo. Embrace your artistic side at The Artisan Apartments. Our studio apartments offer flexible living spaces and a vibrant community in the heart of Denver's thriving RiNo neighborhood.",
-      "location": "River North (RiNo)",
-      "rent": "1,800 / month",
-      "company": {
-        "name": "McWhinney",
-        "description": "McWhinney is a Colorado-based real estate development, investment, and management firm with a knack for creating memorable places. We specialize in mixed-use, commercial, and residential properties.",
-        "contactEmail": "info@mcwhinney.com",
-        "contactPhone": "555-321-6789"
-      }
-    },
-    {
-      "id": "6",
-      "buildingName": "The Ivy Residences",
-      "type": "Townhouse",
-      "description": "Modern Townhouse Living in Wash Park. Discover luxury townhouse living at The Ivy Residences. Our spacious townhomes offer upscale finishes, private outdoor space, and easy access to Washington Park.",
-      "location": "Washington Park",
-      "rent": "3,200 / month",
-      "company": {
-        "name": "Koelbel & Company",
-        "description": "Koelbel & Company is a family-owned real estate development company committed to creating extraordinary places that stand the test of time. We focus on quality, innovation, and sustainability.",
-        "contactEmail": "info@koelbelco.com",
-        "contactPhone": "555-135-7924"
-      }
+[
+  {
+    "id": "1",
+    "buildingName": "La Fonda",
+    "type": "Apartment",
+    "description": "Convenient Cap Hill Apartments. Enjoy apartment living with a historic twist at 611 E 11th. Choose from a variety of one and two-bedroom floor plans in our Cap Hill community.",
+    "location": "Capitol Hill",
+    "rent": "2,100 / month",
+    "company": {
+      "name": "Red Peak",
+      "description": "Our intimate knowledge of Denver and its history comes easy, because we’re from here. We know where old charm lives in the midst of breathtaking expansion, and our communities offer a rare opportunity to balance the best of both worlds.",
+      "contactEmail": "contact@redpeak.com",
+      "contactPhone": "555-555-5555"
     }
-  ]
-}
+  },
+  {
+    "id": "2",
+    "buildingName": "The Douglas Building",
+    "type": "Loft",
+    "description": "Stylish Lofts in the Heart of LoDo. Experience the perfect blend of historic charm and modern convenience at The Douglas Building. Our loft apartments offer spacious layouts and stunning views of downtown Denver.",
+    "location": "Lower Downtown (LoDo)",
+    "rent": "2,500 / month",
+    "company": {
+      "name": "East West Partners",
+      "description": "East West Partners is devoted to building, selling, managing, and supporting high-quality real estate assets. We aim to create value through dedication to the highest standards of architecture, design, construction, and property management.",
+      "contactEmail": "info@eastwestpartners.com",
+      "contactPhone": "555-123-4567"
+    }
+  },
+  {
+    "id": "3",
+    "buildingName": "Highland Bridge Lofts",
+    "type": "Condo",
+    "description": "Luxury Living in Highland. Discover contemporary living at Highland Bridge Lofts. Our condos feature upscale amenities, including a rooftop pool and fitness center, all within walking distance of Denver's best restaurants and shops.",
+    "location": "Highland",
+    "rent": "3,000 / month",
+    "company": {
+      "name": "Zeppelin Development",
+      "description": "Zeppelin Development is a creative developer that produces inventive spaces and experiences that uniquely contribute to the urban fabric. We focus on innovative design, sustainability, and community engagement.",
+      "contactEmail": "hello@zeppelindenver.com",
+      "contactPhone": "555-987-6543"
+    }
+  },
+  {
+    "id": "4",
+    "buildingName": "The Belvedere Tower",
+    "type": "Highrise",
+    "description": "Elegant Highrise Living in Cherry Creek. Experience luxury living at The Belvedere Tower. Our highrise apartments boast breathtaking views, upscale amenities, and easy access to Cherry Creek's shopping and dining scene.",
+    "location": "Cherry Creek",
+    "rent": "4,500 / month",
+    "company": {
+      "name": "Greystar",
+      "description": "Greystar is a global leader in rental housing, offering expertise in property management, investment management, and development and construction services. We are committed to enriching the lives of those we serve.",
+      "contactEmail": "info@greystar.com",
+      "contactPhone": "555-789-0123"
+    }
+  },
+  {
+    "id": "5",
+    "buildingName": "The Artisan Apartments",
+    "type": "Studio",
+    "description": "Creative Studio Living in RiNo. Embrace your artistic side at The Artisan Apartments. Our studio apartments offer flexible living spaces and a vibrant community in the heart of Denver's thriving RiNo neighborhood.",
+    "location": "River North (RiNo)",
+    "rent": "1,800 / month",
+    "company": {
+      "name": "McWhinney",
+      "description": "McWhinney is a Colorado-based real estate development, investment, and management firm with a knack for creating memorable places. We specialize in mixed-use, commercial, and residential properties.",
+      "contactEmail": "info@mcwhinney.com",
+      "contactPhone": "555-321-6789"
+    }
+  },
+  {
+    "id": "6",
+    "buildingName": "The Ivy Residences",
+    "type": "Townhouse",
+    "description": "Modern Townhouse Living in Wash Park. Discover luxury townhouse living at The Ivy Residences. Our spacious townhomes offer upscale finishes, private outdoor space, and easy access to Washington Park.",
+    "location": "Washington Park",
+    "rent": "3,200 / month",
+    "company": {
+      "name": "Koelbel & Company",
+      "description": "Koelbel & Company is a family-owned real estate development company committed to creating extraordinary places that stand the test of time. We focus on quality, innovation, and sustainability.",
+      "contactEmail": "info@koelbelco.com",
+      "contactPhone": "555-135-7924"
+    }
+  }
+]
