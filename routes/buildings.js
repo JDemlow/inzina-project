@@ -68,15 +68,23 @@ router.delete("/:id", getBuilding, async (req, res) => {
 });
 
 async function getBuilding(req, res, next) {
+  const { id } = req.params;
+
+  // Validate ObjectId format
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid building ID format" });
+  }
+
   let building;
   try {
-    building = await Building.findById(req.params.id);
+    building = await Building.findById(id);
     if (building == null) {
       return res.status(404).json({ message: "Cannot find building" });
     }
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
+
   res.building = building;
   next();
 }
