@@ -1,37 +1,32 @@
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
+
 const HomeCards = () => {
+  const [buildings, setBuildings] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/buildings")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => setBuildings(data))
+      .catch((error) => setError(error));
+  }, []);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
-    <section className="py-4">
-      <div className="m-auto container-xl lg:container">
-        <div className="grid grid-cols-1 gap-4 p-4 rounded-lg md:grid-cols-2">
-          <Card>
-            <h2 className="text-2xl font-bold">Building Admin?</h2>
-            <p className="mt-2 mb-4">
-              Log into your profile to manage your building
-            </p>
-            <Link
-              to="*"
-              className="inline-block px-4 py-2 text-white bg-black rounded-lg hover:bg-gray-700"
-            >
-              Log In
-            </Link>
-          </Card>
-          <Card bg="bg-emerald-100">
-            <h2 className="text-2xl font-bold">Building Resident?</h2>
-            <p className="mt-2 mb-4">
-              Add / confirm information about your building here
-            </p>
-            <Link
-              to="/add-building"
-              className="inline-block px-4 py-2 text-white rounded-lg bg-emerald-500 hover:bg-emerald-600"
-            >
-              Add Info
-            </Link>
-          </Card>
-        </div>
-      </div>
-    </section>
+    <div className="home-cards">
+      {buildings.map((building) => (
+        <Card key={building._id} building={building} />
+      ))}
+    </div>
   );
 };
 
