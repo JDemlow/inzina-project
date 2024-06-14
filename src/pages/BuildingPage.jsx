@@ -1,12 +1,32 @@
-import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const BuildingPage = ({ deleteBuilding }) => {
   const { id } = useParams();
-  const building = useLoaderData();
-
+  const [building, setBuilding] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchBuilding = async () => {
+      try {
+        const res = await fetch(`/api/buildings/${id}`);
+        if (!res.ok) {
+          throw new Error("Network response was not ok " + res.statusText);
+        }
+        const data = await res.json();
+        setBuilding(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBuilding();
+  }, [id]);
 
   const onDeleteClick = (buildingId) => {
     const confirm = window.confirm(
@@ -21,6 +41,18 @@ const BuildingPage = ({ deleteBuilding }) => {
 
     navigate("/buildings");
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!building) {
+    return <div>No building found</div>;
+  }
 
   return (
     <>
@@ -65,9 +97,9 @@ const BuildingPage = ({ deleteBuilding }) => {
               </div>
             </main>
 
-            {/* <!-- Sidebar --> */}
+            {/* Sidebar */}
             <aside>
-              {/* <!-- Company Info --> */}
+              {/* Company Info */}
               <div className="p-6 bg-white rounded-lg shadow-md">
                 <h3 className="mb-6 text-xl font-bold">Building Info</h3>
 
@@ -90,7 +122,7 @@ const BuildingPage = ({ deleteBuilding }) => {
                 </p>
               </div>
 
-              {/* <!-- Manage --> */}
+              {/* Manage */}
               <div className="p-6 mt-6 bg-white rounded-lg shadow-md">
                 <h3 className="mb-6 text-xl font-bold">Manage Building</h3>
                 <Link
@@ -115,9 +147,27 @@ const BuildingPage = ({ deleteBuilding }) => {
 };
 
 const buildingLoader = async ({ params }) => {
-  const res = await fetch(`/api/buildings/${params.id}`);
-  const data = await res.json();
-  return data;
+  console.log("Params:", params); // Log params to verify its content
+
+  const url = `/api/buildings/${params.id}`;
+  console.log(`Fetching building data from URL: ${url}`); // Log the formed URL
+
+  try {
+    const res = await fetch(url);
+    console.log(`Response status: ${res.status}`); // Log response status
+
+    if (!res.ok) {
+      console.error("Failed to fetch building data:", res.statusText);
+      throw new Error("Network response was not ok " + res.statusText);
+    }
+
+    const data = await res.json();
+    console.log("Fetched building data:", data); // Log fetched data
+    return data;
+  } catch (error) {
+    console.error("Error fetching building data:", error);
+    throw error;
+  }
 };
 
 export { BuildingPage as default, buildingLoader };

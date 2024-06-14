@@ -58,12 +58,12 @@ const App = () => {
         <Route
           path="/edit-building/:id"
           element={<EditBuildingPage updateBuildingSubmit={updateBuilding} />}
-          loader={buildingLoader}
+          loader={buildingLoader} // Ensure loader is correctly passed here
         />
         <Route
           path="/buildings/:id"
           element={<BuildingPage deleteBuilding={deleteBuilding} />}
-          loader={buildingLoader}
+          loader={buildingLoader} // Ensure loader is correctly passed here
         />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
