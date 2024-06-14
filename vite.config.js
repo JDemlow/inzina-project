@@ -7,14 +7,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://localhost:8000/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
-        configure: (proxy, options) => {
-          proxy.on("proxyReq", (proxyReq, req, res) => {
-            console.log("Proxying request:", req.method, req.url);
-          });
-        },
       },
     },
   },
